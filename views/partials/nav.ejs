@@ -13,7 +13,29 @@
   </div>
   <div class="right-menu">
     <a href="#" class="academy">Academy</a>
-    <a href="#" class="intelligence"><span style="color:  #4494ff;">I</span>ntelligence</a>
+    <a href="#" class="intelligence"><span style="color:#3D67FF">I</span>ntelligence</a>
     <a href="#" class="community">Community</a>
   </div>
+  <div class="burger-menu">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
 </header>
+<script>
+  const burgerMenu = document.querySelector('.burger-menu');
+  const nav = document.querySelector('nav');
+
+  burgerMenu.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burgerMenu.classList.toggle('toggle');
+  });
+
+  // Close the menu when a link is clicked
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      burgerMenu.classList.remove('toggle');
+    });
+  });
+</script>

@@ -1,6 +1,43 @@
+
 <%- include('base', { content: `
-    <div class="hero">
-      <h1 class="welcome-text">Welcome to Grootz</h1>
-      
-    </div>
-  ` }) %>
+  <style>
+    .content {
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .overflow-content {
+      height: 150vh; /* Set height to ensure content overflows */
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <main>
+      <div class="hero">
+        <!-- Hero section content -->
+      </div>
+      <section class="about-section">
+        <h2>ABOUT US</h2>
+        <div class="about-content">
+          <!-- Add your about us content here -->
+          <p>Welcome to our platform, where we strive to bring the best experiences to our users. Our team is dedicated to creating innovative solutions that make a difference in the world. Join us on our journey to excellence!</p>
+        </div>
+      </section>
+      <section class="content">
+        <h1>Example Content</h1>
+        <div class="overflow-content">
+          <p>This is a demonstration of overflow content. Scroll down to see the effect of the glassmorphism header on the rest of the page. This content is intentionally made long to ensure that you can observe how the header behaves with scrolling. If you see this content, it means your glassmorphism header effect is working as intended. The gradient background and glass effect should remain visible while you scroll through this page.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada orci ut nunc vestibulum, in tristique urna vestibulum. Sed a justo ut justo fermentum gravida. Vivamus auctor justo vel tortor varius, at vulputate lorem dignissim. Duis dictum arcu ut leo fermentum dapibus. Praesent sagittis, turpis euismod ultricies feugiat, libero lacus aliquet velit, ac vestibulum lectus urna vel ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Nulla facilisi. Morbi aliquam urna a nisi viverra, eget hendrerit nulla tempus. Sed a diam magna. Aliquam erat volutpat. Integer vestibulum, justo vel tincidunt fermentum, lorem sem lacinia mi, nec suscipit mi ipsum in metus. Mauris at metus dui. Donec vehicula sapien vel est varius, nec consequat elit condimentum. Duis vitae lectus vitae odio fermentum condimentum id sit amet felis.</p>
+          <!-- Add more content as needed to test overflow -->
+        </div>
+      </section>
+    </main>
+  </div>
+` }) %>
