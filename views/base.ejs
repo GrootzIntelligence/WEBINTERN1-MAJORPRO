@@ -1,230 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include('./partials/head.ejs') %>  
-    
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-    
-    * {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      padding-top: 70px;
-      background: linear-gradient(45deg, #3D67FF, #589FFE, #007FB5);
-      min-height: 100vh;
-    }
-    
-    .container {
-      padding-top: 0px;
-    }
-    
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-    
-    nav {
-      flex: 1;
-      display: flex;
-      justify-content: flex-start;
-      font-size: 18px;
-    }
-    
-    nav ul {
-      display: flex;
-      list-style-type: none;
-      margin-top: 1rem;
-      gap: 5rem;
-    }
-    
-    nav ul li a {
-      font-weight: 500;
-      color: #000;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight:600;
-    }
-    
-    .logo {
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-      margin: 0 1rem;
-    }
-    
-    .logo img {
-      width: 70px;
-      height: 60px;
-    }
-    
-    .right-menu {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 7rem;
-      margin-right: 3rem;
-      
-    }
-    
-    .right-menu a {
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 17px;
-    }
-    
-    .academy {
-      color: #ff6b00;
-      background-color: #fff;
-    }
-    
-    .intelligence {
-      color: #fff;
-      background-color: #000;
-    }
-    
-    .community {
-      background-color: #333;
-      color: #fff;
-    }
-    
-    .hero {
-      height: 60vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: url('path_to_your_3d_shapes_image.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.7;
-    }
-    
-    .about-section {
-      background-color: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-      margin-top: 2rem;
-      border-radius: 10px;
-    }
-    
-    .about-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      color: #333;
-    }
-    
-    .burger-menu {
-      display: none;
-      cursor: pointer;
-    }
-    
-    .burger-menu div {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin: 5px;
-      transition: all 0.3s ease;
-    }
-    
-    @media screen and (max-width: 1024px) {
-      nav ul {
-        gap: 2rem;
+  <head>
+    <%- include('./partials/head.ejs') %>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      
-      .right-menu {
-        gap: 3rem;
-      }
-    }
-    
-    @media screen and (max-width: 768px) {
+
       body {
-        padding-top: 60px;
+        padding-top: 70px;
+        background: url("/images/back.jpg") no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding-top: 0;
       }
-      
+
+      .container {
+        padding-top: 0;
+      }
+
       header {
-        padding: 1rem;
-      }
-      
-      .burger-menu {
-        display: block;
-        z-index: 2;
-      }
-      
-      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         position: fixed;
-        right: -100%;
-        top: 70px;
-        width: 100%;
-        height: calc(100% - 70px);
-        background: rgba(255, 255, 255, 0.9);
-        flex-direction: column;
-        align-items: center;
-        transition: right 0.5s ease;
-      }
-      
-      nav.active {
+        top: 0;
+        left: 0;
         right: 0;
+        z-index: 1000;
       }
-      
+
+      nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 18px;
+      }
+
       nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 2rem;
-        padding-top: 2rem;
+        display: flex;
+        list-style-type: none;
+        margin-top: 1rem;
+        gap: 5rem;
       }
-      
+
       nav ul li a {
-        color: #333;
+        font-weight: 500;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.4s ease, transform 0.3s ease; /* Added transform for scaling effect */
+        font-weight: 600;
       }
-      
+      nav ul li a:hover {
+        color: #fff; /* Change color to white on hover */
+      }
+      .logo {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        margin: 0 1rem;
+      }
+
+      .logo img {
+        width: 70px;
+        height: 60px;
+      }
+
       .right-menu {
-        display: none;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 7rem;
+        margin-right: 3rem;
       }
-    }
-  </style>
-</head>
-<body>
-  <%- include('./partials/nav.ejs') %>
-  <div class="container">
-    <main>
-      <%- content %>
-    </main>
-  </div>
-  <script></script>
-</body>
+
+      .right-menu a {
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 17px;
+      }
+
+      .academy {
+        color: #ff6b00;
+        background-color: #fff;
+      }
+
+      .intelligence {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .community {
+        background-color: #000;
+        color: #4494ff;
+      }
+      .academy:hover,
+      .intelligence:hover,
+      .community:hover {
+        transform: scale(1.15); /* Scale the size slightly on hover */
+      }
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10%;
+      }
+
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        max-width: 900px;
+        color: white;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 1.5rem 1rem 3rem;
+        color: #ffffff; /* Adjusted to match the text color */
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: x-large;
+        transition: background-color 0.3s ease;
+        border: 2px solid rgba(125, 211, 240, 0.5); /* Added border */
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.216); /* Added shadow */
+      }
+
+      .cta-button:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-button .arrow {
+        margin-left: 1rem;
+        font-size: 1.8rem;
+        line-height: 1;
+        font-weight: bold;
+        color: black; /* Adjusted to match the arrow color */
+      }
+
+      .about-section {
+        background-color: rgba(26, 26, 26, 0.9);
+        color: #ffffff;
+        padding: 4rem 0;
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .about-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .about-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #4494ff;
+      }
+
+      main {
+        width: 100vw;
+      }
+
+      @media screen and (max-width: 1024px) {
+        nav ul {
+          gap: 2rem;
+        }
+
+        .right-menu {
+          gap: 3rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          padding-top: 60px;
+        }
+
+        header {
+          padding: 1rem;
+        }
+
+        .burger-menu {
+          display: block;
+          z-index: 2;
+        }
+
+        nav {
+          position: fixed;
+          right: -100%;
+          top: 70px;
+          width: 100%;
+          height: calc(100% - 70px);
+          background: rgba(255, 255, 255, 0.9);
+          flex-direction: column;
+          align-items: center;
+          transition: right 0.5s ease;
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          gap: 2rem;
+          padding-top: 2rem;
+        }
+
+        nav ul li a {
+          color: #333;
+        }
+
+        .right-menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main><%- content %> <%- include('./about.ejs') %></main>
+    <script></script>
+  </body>
 </html>
