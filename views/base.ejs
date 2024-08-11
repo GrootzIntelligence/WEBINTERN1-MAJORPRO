@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <%- include('./partials/head.ejs') %>
-
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -61,11 +60,11 @@
         font-weight: 500;
         color: #000;
         text-decoration: none;
-        transition: color 0.4s ease, transform 0.3s ease; /* Added transform for scaling effect */
+        transition: color 0.4s ease, transform 0.3s ease;
         font-weight: 600;
       }
       nav ul li a:hover {
-        color: #fff; /* Change color to white on hover */
+        color: #fff;
       }
       .logo {
         flex: 0 0 auto;
@@ -114,7 +113,7 @@
       .academy:hover,
       .intelligence:hover,
       .community:hover {
-        transform: scale(1.15); /* Scale the size slightly on hover */
+        transform: scale(1.15);
       }
       .hero {
         height: 100vh;
@@ -148,13 +147,13 @@
         display: inline-flex;
         align-items: center;
         padding: 1rem 1.5rem 1rem 3rem;
-        color: #ffffff; /* Adjusted to match the text color */
+        color: #ffffff;
         text-decoration: none;
         border-radius: 25px;
         font-size: x-large;
         transition: background-color 0.3s ease;
-        border: 2px solid rgba(125, 211, 240, 0.5); /* Added border */
-        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.216); /* Added shadow */
+        border: 2px solid rgba(125, 211, 240, 0.5);
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.216);
       }
 
       .cta-button:hover {
@@ -166,33 +165,80 @@
         font-size: 1.8rem;
         line-height: 1;
         font-weight: bold;
-        color: black; /* Adjusted to match the arrow color */
+        color: black;
       }
 
       .about-section {
-        background-color: rgba(26, 26, 26, 0.9);
-        color: #ffffff;
-        padding: 4rem 0;
+        background: url("/images/image.png");
+        background-size: cover;
+        color: #000;
         width: 100vw;
-        min-height: 100vh;
+        min-height: 120vh;
         display: flex;
         align-items: center;
       }
 
       .about-content {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
-      .about-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #4494ff;
-      }
-
       main {
         width: 100vw;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .slide-in-left {
+        animation: slideInLeft 1.5s ease-out forwards;
+      }
+
+      .slide-in-right {
+        animation: slideInRight 1.5s ease-out forwards;
+      }
+
+      .about-content p {
+        font-size: x-large;
+        font-weight: 500;
+        color: #525252;
+        opacity: 0;
+      }
+
+      .para-1 {
+        margin-bottom: 4rem;
+      }
+
+      .hero-content > * {
+        opacity: 0;
+      }
+      .hero-content .cta-button {
+        animation: slideInRight 0.85s ease-out forwards;
+      }
+
+      .hero-content h1,
+      .hero-content .p {
+        animation: slideInRight 0.6s ease-out forwards;
       }
 
       @media screen and (max-width: 1024px) {
@@ -255,7 +301,36 @@
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <main><%- content %> <%- include('./about.ejs') %></main>
-    <script></script>
+    <main>
+      <%- content %>
+      <div
+        class="icons"
+        style="height: 35vh; width: 100vw; background-color: #000917"
+      ></div>
+      <%- include('./about.ejs') %>
+      <div
+        class="stats"
+        style="height: 35vh; width: 100vw; background-color: #000917"
+      ></div>
+    </main>
+    <script>
+      // JavaScript to handle scrolling animation
+      window.addEventListener('scroll', function() {
+        const aboutSection = document.getElementById('about');
+        const para1 = document.querySelector('.para-1');
+        const para2 = document.querySelector('.para-2');
+        
+        const aboutPosition = aboutSection.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+      
+        if (aboutPosition < screenHeight - 150) {
+          para1.classList.add('slide-in-left');
+          para2.classList.add('slide-in-right');
+          // Remove the event listener after the animation is triggered to prevent repeated triggers
+          window.removeEventListener('scroll', arguments.callee);
+        }
+      });
+    </script>
+    
   </body>
 </html>
