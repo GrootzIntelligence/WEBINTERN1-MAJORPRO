@@ -13,16 +13,10 @@
       }
 
       body {
-        padding-top: 70px;
         background: url("/images/back.jpg") no-repeat center center fixed;
         background-size: cover;
         min-height: 100vh;
         overflow-x: hidden;
-        padding-top: 0;
-      }
-
-      .container {
-        padding-top: 0;
       }
 
       header {
@@ -57,15 +51,16 @@
       }
 
       nav ul li a {
-        font-weight: 500;
+        font-weight: 600;
         color: #000;
         text-decoration: none;
         transition: color 0.4s ease, transform 0.3s ease;
-        font-weight: 600;
       }
+
       nav ul li a:hover {
         color: #fff;
       }
+
       .logo {
         flex: 0 0 auto;
         display: flex;
@@ -90,10 +85,9 @@
       .right-menu a {
         text-decoration: none;
         transition: all 0.3s ease;
-        font-size: 0.9rem;
+        font-size: 17px;
         padding: 0.4rem 0.8rem;
         border-radius: 20px;
-        font-size: 17px;
       }
 
       .academy {
@@ -110,11 +104,13 @@
         background-color: #000;
         color: #4494ff;
       }
+
       .academy:hover,
       .intelligence:hover,
       .community:hover {
         transform: scale(1.15);
       }
+
       .hero {
         height: 100vh;
         display: flex;
@@ -169,7 +165,7 @@
       }
 
       .about-section {
-        background: url("/images/image.png");
+        background: url("/images/about.png");
         background-size: cover;
         color: #000;
         width: 100vw;
@@ -232,6 +228,7 @@
       .hero-content > * {
         opacity: 0;
       }
+
       .hero-content .cta-button {
         animation: slideInRight 0.85s ease-out forwards;
       }
@@ -297,40 +294,163 @@
           display: none;
         }
       }
+
+      .icon-animation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .slide-left {
+        animation: slideFromLeft 1s ease-out forwards;
+      }
+
+      .slide-top {
+        animation: slideFromTop 1s ease-out forwards;
+      }
+
+      .slide-right {
+        animation: slideFromRight 1s ease-out forwards;
+      }
+
+      @keyframes slideFromLeft {
+        from { transform: translateX(-100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+
+      @keyframes slideFromTop {
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      @keyframes slideFromRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      .stats {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-number::after {
+  content: '+';
+  font-size: 2rem;
+  margin-left: 0.2rem;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
     </style>
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
     <main>
       <%- content %>
-      <div
-        class="icons"
-        style="height: 35vh; width: 100vw; background-color: #000917"
-      ></div>
+      <div id="icons-section" class="icons" style="
+    width: 100%;
+    background-color: #000917;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+">
+    <img src="/images/academy.jpg" alt="academy img" style="max-width: 150px; width: 30%; height: auto;" class="icon-animation">
+    <img src="/images/intelligence.jpg" alt="intelligence img" style="max-width: 150px; width: 30%; height: auto;" class="icon-animation">
+    <img src="/images/community.jpg" alt="community img" style="max-width: 150px; width: 30%; height: auto;" class="icon-animation">
+</div>
       <%- include('./about.ejs') %>
-      <div
-        class="stats"
-        style="height: 35vh; width: 100vw; background-color: #000917"
-      ></div>
+      <div class="stats" style="padding:3rem 4rem; width: 100%; background-color: #000917">
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="500">0</h2>
+          <p>Students connected all over India</p>
+        </div>
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="1000">0</h2>
+          <p>Application Received by Students</p>
+        </div>
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="1500">0</h2>
+          <p>Students applied for Internship</p>
+        </div>
+      </div>
+      <%- include('./activities.ejs') %>
     </main>
     <script>
       // JavaScript to handle scrolling animation
-      window.addEventListener('scroll', function() {
-        const aboutSection = document.getElementById('about');
-        const para1 = document.querySelector('.para-1');
-        const para2 = document.querySelector('.para-2');
-        
+      window.addEventListener("scroll", function () {
+        const aboutSection = document.getElementById("about");
+        const para1 = document.querySelector(".para-1");
+        const para2 = document.querySelector(".para-2");
+
         const aboutPosition = aboutSection.getBoundingClientRect().top;
         const screenHeight = window.innerHeight;
-      
+
         if (aboutPosition < screenHeight - 150) {
-          para1.classList.add('slide-in-left');
-          para2.classList.add('slide-in-right');
+          para1.classList.add("slide-in-left");
+          para2.classList.add("slide-in-right");
           // Remove the event listener after the animation is triggered to prevent repeated triggers
-          window.removeEventListener('scroll', arguments.callee);
+          window.removeEventListener("scroll", arguments.callee);
+        }
+        // New code for icon animations
+        const iconsSection = document.getElementById('icons-section');
+        const iconElements = iconsSection.querySelectorAll('.icon-animation');
+        
+        const iconsSectionPosition = iconsSection.getBoundingClientRect().top;
+        
+        if (iconsSectionPosition < screenHeight - 150) {
+            iconElements[0].classList.add('slide-left');
+            iconElements[1].classList.add('slide-top');
+            iconElements[2].classList.add('slide-right');
         }
       });
+
+      const stats = document.querySelectorAll('.stat-number');
+
+const observerOptions = {
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateValue(entry.target, 0, parseInt(entry.target.dataset.target), 2000);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+stats.forEach(stat => {
+  observer.observe(stat);
+});
+
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
     </script>
-    
   </body>
 </html>
