@@ -1,5 +1,138 @@
 <section id="footer" class="footer-section">
-    <div class="footer">
-      <img src="/images/footer.png" alt="G Logo" class="centered-logo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Left Section for Logo and Contact Info -->
+      <div class="footer-left">
+        <div class="logo-container">
+          <img src="/images/favicon.ico" alt="Grootz Logo" class="footer-logo" style="width:100px; height:100px"/>
+          <img src="/images/footer-logo.png" alt="Grootz Logo" class="footer-logo" />
+          <p>Support @grootz.com</p>
+          <p>+91 - 123456789</p>
+        </div>
+      </div>
+
+      <!-- Right Section for Quick Links and About Links -->
+      <div class="footer-right">
+        <div class="footer-middle">
+          <h3>Quick</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Courses</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-about">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  /* Footer Styles */
+  #footer {
+    background-image: url('/images/footer.png'); /* Keeping the background image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: white;
+    width: 100%;
+    height: 90vh;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%; /* Ensure container takes full height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .footer-left {
+    text-align: left;
+    max-width: 50%; /* Cover the left half of the footer */
+  }
+
+  .footer-logo {
+    max-width: 150px; /* Adjust the logo size as needed */
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    display: flex;
+    justify-content: space-between;
+    width: 50%; /* Cover the right half of the footer */
+    align-items: flex-start;
+    text-align: left; /* Align text to the left */
+  }
+
+  .footer-middle,
+  .footer-about {
+    flex: 1;
+  }
+
+  .footer-middle ul,
+  .footer-about ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    gap: 2rem;
+  }
+
+  .footer-middle h3,
+  .footer-about h3 {
+    font-size: 2rem; /* Increased font size */
+    margin-bottom: 10px; /* Decreased margin */
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  .footer-middle h3::after,
+  .footer-about h3::after {
+    content: "";
+    display: block;
+    width: 150%; /* Make underline longer than the heading */
+    height: 2px;
+    background-color: #D4AF37; /* Gold color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .footer-middle li,
+  .footer-about li {
+    margin-bottom: 15px; /* Increased margin for better spacing */
+  }
+
+  .footer-middle a,
+  .footer-about a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem; /* Increased font size */
+    transition: color 0.3s ease;
+    display: block;
+  }
+
+  .footer-middle a:hover,
+  .footer-about a:hover {
+    color: #D4AF37; /* Gold color on hover */
+  }
+</style>
