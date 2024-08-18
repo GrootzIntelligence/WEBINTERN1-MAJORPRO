@@ -1,17 +1,124 @@
 <section id="blog" class="blog-section">
-    <div class="blog-content">
-      
+  <div class="blog-content">
+    <div class="head">
+      <h1>Our <span class="blue-text">Blog</span></h1>
+    <p class="description">
+      Grootz is a one stop solution for all the aspiring minds. Let your mind wander into the depths of innovation and practice thinking out of the box with the help of exemplary services of our competent team.
+    </p>
     </div>
-  </section>
-  <style>
-    .blog-section {
-    background: url("/images/blog.png");
-    background-size: cover;
+    <div class="blog-cards">
+      <div class="blog-card">
+        <img src="https://placehold.co/400x250" alt="Celebrating with children">
+        <h3>Celebrating with children</h3>
+        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://placehold.co/400x250" alt="Celebrating with children">
+        <h3>Celebrating with children</h3>
+        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-card">
+        <img src="https://placehold.co/400x250" alt="Celebrating with children">
+        <h3>Celebrating with children</h3>
+        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+
+  .blog-section {
+    background-color: white;
     color: #000;
     width: 100%;
-    min-height: 120vh;
-    display: flex;
-    align-items: center;
+    min-height: 90vh;
+    padding: 60px ;
+    box-sizing: border-box;
   }
-  </style>
-  
+
+  .blog-content {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .head{
+    margin-left: 1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .blue-text {
+    color: #3498db;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 1000px;
+  }
+
+  .blog-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+
+  .blog-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .blog-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .blog-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .blog-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  /* Add a right arrow for overflow indication */
+  .blog-cards::after {
+    content: ">";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    font-size: 2rem;
+    color: #000;
+  }
+</style>
