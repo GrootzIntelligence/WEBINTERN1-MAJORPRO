@@ -1,527 +1,578 @@
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <%- include('./partials/head.ejs') %>
-      <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-        * {
-          font-family: "Poppins", sans-serif;
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: url("/images/back.jpg") no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 18px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style-type: none;
+        margin-top: 1rem;
+        gap: 5rem;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.4s ease, transform 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #fff;
+      }
+
+      .logo {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        margin: 0 1rem;
+      }
+
+      .logo img {
+        width: 70px;
+        height: 60px;
+        cursor: pointer;
+      }
+
+      .right-menu {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 7rem;
+        margin-right: 3rem;
+      }
+
+      .right-menu a {
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 17px;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+      }
+
+      .academy {
+        color: #ff6b00;
+        background-color: #fff;
+      }
+
+      .intelligence {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .community {
+        background-color: #000;
+        color: #4494ff;
+      }
+
+      .academy:hover,
+      .intelligence:hover,
+      .community:hover {
+        transform: scale(1.15);
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10%;
+      }
+
+      .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        max-width: 900px;
+        color: white;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 1.5rem 1rem 3rem;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: x-large;
+        transition: background-color 0.3s ease;
+        border: 2px solid rgba(125, 211, 240, 0.5);
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.216);
+      }
+
+      .cta-button:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-button .arrow {
+        margin-left: 1rem;
+        font-size: 1.8rem;
+        line-height: 1;
+        font-weight: bold;
+        color: black;
+      }
+
+      .about-section {
+        background: url("/images/about.png");
+        background-size: cover;
+        color: #000;
+        width: 100vw;
+        min-height: 120vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .about-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      main {
+        width: 100vw;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
         }
-
-        body {
-          background: url("/images/back.jpg") no-repeat center center fixed;
-          background-size: cover;
-          min-height: 100vh;
-          overflow-x: hidden;
+        to {
+          transform: translateX(0);
+          opacity: 1;
         }
+      }
 
-        header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 2rem;
-          background: rgba(255, 255, 255, 0.15);
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 1000;
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
         }
-
-        nav {
-          flex: 1;
-          display: flex;
-          justify-content: flex-start;
-          font-size: 18px;
+        to {
+          transform: translateX(0);
+          opacity: 1;
         }
+      }
 
+      .slide-in-left {
+        animation: slideInLeft 1.5s ease-out forwards;
+      }
+
+      .slide-in-right {
+        animation: slideInRight 1.5s ease-out forwards;
+      }
+
+      .about-content p {
+        font-size: x-large;
+        font-weight: 500;
+        color: #525252;
+        opacity: 0;
+      }
+
+      .para-1 {
+        margin-bottom: 4rem;
+      }
+
+      .hero-content > * {
+        opacity: 0;
+      }
+
+      .hero-content .cta-button {
+        animation: slideInRight 0.85s ease-out forwards;
+      }
+
+      .hero-content h1,
+      .hero-content .p {
+        animation: slideInRight 0.6s ease-out forwards;
+      }
+
+      @media screen and (max-width: 1024px) {
         nav ul {
-          display: flex;
-          list-style-type: none;
-          margin-top: 1rem;
-          gap: 5rem;
-        }
-
-        nav ul li a {
-          font-weight: 600;
-          color: #000;
-          text-decoration: none;
-          transition: color 0.4s ease, transform 0.3s ease;
-        }
-
-        nav ul li a:hover {
-          color: #fff;
-        }
-
-        .logo {
-          flex: 0 0 auto;
-          display: flex;
-          justify-content: center;
-          margin: 0 1rem;
-        }
-
-        .logo img {
-          width: 70px;
-          height: 60px;
-          cursor: pointer;
+          gap: 2rem;
         }
 
         .right-menu {
-          flex: 1;
-          display: flex;
-          justify-content: flex-end;
+          gap: 3rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          padding-top: 60px;
+        }
+
+        header {
+          padding: 1rem;
+        }
+
+        .burger-menu {
+          display: block;
+          z-index: 2;
+        }
+
+        nav {
+          position: fixed;
+          right: -100%;
+          top: 70px;
+          width: 100%;
+          height: calc(100% - 70px);
+          background: rgba(255, 255, 255, 0.9);
+          flex-direction: column;
           align-items: center;
-          gap: 7rem;
-          margin-right: 3rem;
+          transition: right 0.5s ease;
         }
 
-        .right-menu a {
-          text-decoration: none;
-          transition: all 0.3s ease;
-          font-size: 17px;
-          padding: 0.4rem 0.8rem;
-          border-radius: 20px;
+        nav.active {
+          right: 0;
         }
 
-        .academy {
-          color: #ff6b00;
-          background-color: #fff;
-        }
-
-        .intelligence {
-          color: #fff;
-          background-color: #000;
-        }
-
-        .community {
-          background-color: #000;
-          color: #4494ff;
-        }
-
-        .academy:hover,
-        .intelligence:hover,
-        .community:hover {
-          transform: scale(1.15);
-        }
-
-        .hero {
-          height: 100vh;
-          display: flex;
+        nav ul {
+          flex-direction: column;
           align-items: center;
-          justify-content: flex-start;
-          padding-left: 10%;
+          width: 100%;
+          gap: 2rem;
+          padding-top: 2rem;
         }
 
-        .hero h1 {
-          color: white;
-          font-size: 3.5rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          line-height: 1.2;
-          letter-spacing: 1px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        nav ul li a {
+          color: #333;
         }
 
-        .hero p {
-          margin-top: 2.5rem;
-          font-size: 1.5rem;
-          margin-bottom: 3rem;
-          line-height: 1.6;
-          opacity: 0.9;
-          max-width: 900px;
-          color: white;
+        .right-menu {
+          display: none;
         }
+      }
 
-        .cta-button {
-          display: inline-flex;
-          align-items: center;
-          padding: 1rem 1.5rem 1rem 3rem;
-          color: #ffffff;
-          text-decoration: none;
-          border-radius: 25px;
-          font-size: x-large;
-          transition: background-color 0.3s ease;
-          border: 2px solid rgba(125, 211, 240, 0.5);
-          box-shadow: 0 8px 10px rgba(0, 0, 0, 0.216);
+      .icon-animation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .slide-left {
+        animation: slideFromLeft 1s ease-out forwards;
+      }
+
+      .slide-top {
+        animation: slideFromTop 1s ease-out forwards;
+      }
+
+      .slide-right {
+        animation: slideFromRight 1s ease-out forwards;
+      }
+
+      @keyframes slideFromLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
         }
-
-        .cta-button:hover {
-          background-color: rgba(255, 255, 255, 0.3);
+        to {
+          transform: translateX(0);
+          opacity: 1;
         }
+      }
 
-        .cta-button .arrow {
-          margin-left: 1rem;
-          font-size: 1.8rem;
-          line-height: 1;
-          font-weight: bold;
-          color: black;
+      @keyframes slideFromTop {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
         }
-
-        .about-section {
-          background: url("/images/about.png");
-          background-size: cover;
-          color: #000;
-          width: 100vw;
-          min-height: 120vh;
-          display: flex;
-          align-items: center;
+        to {
+          transform: translateY(0);
+          opacity: 1;
         }
+      }
 
+      @keyframes slideFromRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .stat-number::after {
+        content: "+";
+        font-size: 2rem;
+        margin-left: 0.2rem;
+      }
+
+      .stat-item p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      .activities-section {
+        background: url("/images/activities.png");
+        background-size: cover;
+        color: #000;
+        width: 100%;
+        min-height: 120vh;
+        display: flex;
+        align-items: center;
+      }
+      .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      .centered-logo {
+        max-width: 100%; /* Adjust as needed */
+        height: auto;
+      }
+
+      /* New responsive styles for about section */
+      @media screen and (max-width: 1200px) {
         .about-content {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 2rem;
+          max-width: 90%;
         }
-
-        main {
-          width: 100vw;
-        }
-
-        @keyframes slideInLeft {
-          from {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        .slide-in-left {
-          animation: slideInLeft 1.5s ease-out forwards;
-        }
-
-        .slide-in-right {
-          animation: slideInRight 1.5s ease-out forwards;
-        }
-
+        
         .about-content p {
-          font-size: x-large;
-          font-weight: 500;
-          color: #525252;
-          opacity: 0;
+          font-size: large;
         }
+      }
 
+      @media screen and (max-width: 992px) {
+        .about-section {
+          min-height: auto;
+          padding: 4rem 0;
+        }
+        
+        .about-content p {
+          font-size: medium;
+        }
+        
         .para-1 {
-          margin-bottom: 4rem;
+          margin-bottom: 2rem;
         }
+      }
 
-        .hero-content > * {
-          opacity: 0;
+      @media screen and (max-width: 768px) {
+        .about-content {
+          padding: 0 1rem;
         }
-
-        .hero-content .cta-button {
-          animation: slideInRight 0.85s ease-out forwards;
+        
+        .about-content p {
+          font-size: small;
         }
+      }
 
-        .hero-content h1,
-        .hero-content .p {
-          animation: slideInRight 0.6s ease-out forwards;
+      @media screen and (max-width: 480px) {
+        .about-section {
+          padding: 2rem 0;
         }
-
-        @media screen and (max-width: 1024px) {
-          nav ul {
-            gap: 2rem;
-          }
-
-          .right-menu {
-            gap: 3rem;
-          }
+        
+        .about-content p {
+          font-size: x-small;
         }
-
-        @media screen and (max-width: 768px) {
-          body {
-            padding-top: 60px;
-          }
-
-          header {
-            padding: 1rem;
-          }
-
-          .burger-menu {
-            display: block;
-            z-index: 2;
-          }
-
-          nav {
-            position: fixed;
-            right: -100%;
-            top: 70px;
-            width: 100%;
-            height: calc(100% - 70px);
-            background: rgba(255, 255, 255, 0.9);
-            flex-direction: column;
-            align-items: center;
-            transition: right 0.5s ease;
-          }
-
-          nav.active {
-            right: 0;
-          }
-
-          nav ul {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            gap: 2rem;
-            padding-top: 2rem;
-          }
-
-          nav ul li a {
-            color: #333;
-          }
-
-          .right-menu {
-            display: none;
-          }
+        
+        .para-1 {
+          margin-bottom: 1rem;
         }
-
-        .icon-animation {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .slide-left {
-          animation: slideFromLeft 1s ease-out forwards;
-        }
-
-        .slide-top {
-          animation: slideFromTop 1s ease-out forwards;
-        }
-
-        .slide-right {
-          animation: slideFromRight 1s ease-out forwards;
-        }
-
-        @keyframes slideFromLeft {
-          from {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideFromTop {
-          from {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideFromRight {
-          from {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        .stats {
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+      <%- content %>
+      <div
+        id="icons-section"
+        class="icons"
+        style="
+          width: 100%;
+          height:20vh;
+          background-color: #000917;
+          padding: 2rem 4rem;
           display: flex;
           justify-content: space-around;
-          color: white;
-          font-family: Arial, sans-serif;
-        }
-
-        .stat-item {
-          text-align: center;
-        }
-
-        .stat-number {
-          font-size: 3rem;
-          margin-bottom: 0.5rem;
-          display: flex;
-          justify-content: center;
           align-items: center;
-        }
-
-        .stat-number::after {
-          content: "+";
-          font-size: 2rem;
-          margin-left: 0.2rem;
-        }
-
-        .stat-item p {
-          font-size: 0.9rem;
-          opacity: 0.8;
-        }
-        .activities-section {
-          background: url("/images/activities.png");
-          background-size: cover;
-          color: #000;
-          width: 100%;
-          min-height: 120vh;
-          display: flex;
-          align-items: center;
-        }
-        .footer {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          width: 100%;
-        }
-
-        .centered-logo {
-          max-width: 100%; /* Adjust as needed */
-          height: auto;
-        }
-      </style>
-    </head>
-    <body>
-      <%- include('./partials/nav.ejs') %>
-      <main>
-        <%- content %>
-        <div
-          id="icons-section"
-          class="icons"
-          style="
-            width: 100%;
-            height:20vh;
-            background-color: #000917;
-            padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-          "
-        >
-          <img
-            src="/images/academy.png"
-            alt="academy img"
-            style="max-width: 150px; width: 30%; height: auto;"
-            class="icon-animation"
-          />
-          <img
-            src="/images/intelligence.png"
-            alt="intelligence img"
-            style="max-width: 150px; width: 30%; height: auto"
-            class="icon-animation"
-          />
-          <img
-            src="/images/community.png"
-            alt="community img"
-            style="max-width: 150px; width: 30%; height: auto"
-            class="icon-animation"
-          />
+        "
+      >
+        <img
+          src="/images/academy.png"
+          alt="academy img"
+          style="max-width: 150px; width: 30%; height: auto;"
+          class="icon-animation"
+        />
+        <img
+          src="/images/intelligence.png"
+          alt="intelligence img"
+          style="max-width: 150px; width: 30%; height: auto"
+          class="icon-animation"
+        />
+        <img
+          src="/images/community.png"
+          alt="community img"
+          style="max-width: 150px; width: 30%; height: auto"
+          class="icon-animation"
+        />
+      </div>
+      <%- include('./about.ejs') %>
+      <div
+        class="stats"
+        style="padding: 3rem 4rem; width: 100%; background-color: #000917"
+      >
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="500">0</h2>
+          <p>Students connected all over India</p>
         </div>
-        <%- include('./about.ejs') %>
-        <div
-          class="stats"
-          style="padding: 3rem 4rem; width: 100%; background-color: #000917"
-        >
-          <div class="stat-item">
-            <h2 class="stat-number" data-target="500">0</h2>
-            <p>Students connected all over India</p>
-          </div>
-          <div class="stat-item">
-            <h2 class="stat-number" data-target="1000">0</h2>
-            <p>Application Received by Students</p>
-          </div>
-          <div class="stat-item">
-            <h2 class="stat-number" data-target="1500">0</h2>
-            <p>Students applied for Internship</p>
-          </div>
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="1000">0</h2>
+          <p>Application Received by Students</p>
         </div>
-        <%- include('./activities.ejs') %>
-        <%- include('./blog.ejs') %>
-        <%- include('./contact.ejs') %>
-        <%- include('./footer.ejs') %>
-      </main>
-      <script>
-        // JavaScript to handle scrolling animation
-        window.addEventListener("scroll", function () {
-          const aboutSection = document.getElementById("about");
-          const para1 = document.querySelector(".para-1");
-          const para2 = document.querySelector(".para-2");
+        <div class="stat-item">
+          <h2 class="stat-number" data-target="1500">0</h2>
+          <p>Students applied for Internship</p>
+        </div>
+      </div>
+      <%- include('./activities.ejs') %>
+      <%- include('./blog.ejs') %>
+      <%- include('./contact.ejs') %>
+      <%- include('./footer.ejs') %>
+    </main>
+    <script>
+      // JavaScript to handle scrolling animation
+      window.addEventListener("scroll", function () {
+        const aboutSection = document.getElementById("about");
+        const para1 = document.querySelector(".para-1");
+        const para2 = document.querySelector(".para-2");
 
-          const aboutPosition = aboutSection.getBoundingClientRect().top;
-          const screenHeight = window.innerHeight;
+        const aboutPosition = aboutSection.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
 
-          if (aboutPosition < screenHeight - 150) {
-            para1.classList.add("slide-in-left");
-            para2.classList.add("slide-in-right");
-            // Remove the event listener after the animation is triggered to prevent repeated triggers
-            window.removeEventListener("scroll", arguments.callee);
-          }
-          // New code for icon animations
-          const iconsSection = document.getElementById("icons-section");
-          const iconElements = iconsSection.querySelectorAll(".icon-animation");
+        if (aboutPosition < screenHeight - 150) {
+          para1.classList.add("slide-in-left");
+          para2.classList.add("slide-in-right");
+          // Remove the event listener after the animation is triggered to prevent repeated triggers
+          window.removeEventListener("scroll", arguments.callee);
+        }
+        // New code for icon animations
+        const iconsSection = document.getElementById("icons-section");
+        const iconElements = iconsSection.querySelectorAll(".icon-animation");
 
-          const iconsSectionPosition = iconsSection.getBoundingClientRect().top;
+        const iconsSectionPosition = iconsSection.getBoundingClientRect().top;
 
-          if (iconsSectionPosition < screenHeight - 150) {
-            iconElements[0].classList.add("slide-left");
-            iconElements[1].classList.add("slide-top");
-            iconElements[2].classList.add("slide-right");
+        if (iconsSectionPosition < screenHeight - 150) {
+          iconElements[0].classList.add("slide-left");
+          iconElements[1].classList.add("slide-top");
+          iconElements[2].classList.add("slide-right");
+        }
+      });
+
+      const stats = document.querySelectorAll(".stat-number");
+
+      const observerOptions = {
+        threshold: 0.5,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateValue(
+              entry.target,
+              0,
+              parseInt(entry.target.dataset.target),
+              2000
+            );
+            observer.unobserve(entry.target);
           }
         });
+      }, observerOptions);
 
-        const stats = document.querySelectorAll(".stat-number");
+      stats.forEach((stat) => {
+        observer.observe(stat);
+      });
 
-        const observerOptions = {
-          threshold: 0.5,
+      function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
         };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateValue(
-                entry.target,
-                0,
-                parseInt(entry.target.dataset.target),
-                2000
-              );
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        stats.forEach((stat) => {
-          observer.observe(stat);
-        });
-
-        function animateValue(obj, start, end, duration) {
-          let startTimestamp = null;
-          const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start);
-            if (progress < 1) {
-              window.requestAnimationFrame(step);
-            }
-          };
-          window.requestAnimationFrame(step);
-        }
-      </script>
-    </body>
-  </html>
+        window.requestAnimationFrame(step);
+      }
+      
+    </script>
+  </body>
+</html>
