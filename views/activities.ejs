@@ -1,6 +1,279 @@
-<section id="activities" class="activities-section">
-    <div class="activities-content">
-      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grootz Community</title>
+  <style>
+    .description-section {
+      background-color: #000000;
+      color: white;
+      min-height: 95vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .description-container {
+      width: 100vw;
+      max-width: 1500px;
+    }
+
+    .h1-activities {
+      font-size: 3.5vw;
+      margin-bottom: 6vh;
+      font-weight: 600;
+      text-align: center; /* Center heading */
+    }
+
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 2vw;
+      align-items: start; /* Align items to the top */
+      height: auto; /* Adjust height automatically */
+    }
+
+    .description-activities {
+      width: 100%; /* Full width within its grid cell */
+      text-align: left; /* Aligns text to the left */
+    }
+
+    .activities-list {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.25rem; /* Reduced font size */
+      white-space: pre-wrap; /* Maintains line breaks and white space */
+      overflow-wrap: break-word; /* Wraps text to fit the container */
+      margin-bottom: 1.5vh; /* Spacing between sections */
+      padding: 10px; /* Reduced padding */
+      border-radius: 0.5vw; /* Rounded corners */
+      max-width: 100%; /* Ensure it fits within its container */
+      box-sizing: border-box; /* Include padding in the width calculation */
+      color: #D2D2D2;
+    }
+
+    .activities {
+      width: 100%; /* Full width within its grid cell */
+      display: flex;
+      flex-direction: column;
+      gap: 6vh; /* Space between buttons */
+      align-self: center; /* Vertically centers buttons */
+      margin-top: 4.4rem;
+    }
+
+    .activity-btn {
+      width: 90%; /* Width of each button */
+      padding: 1.8vh 3vw; /* Padding for buttons */
+      font-size: 1.4vw; /* Font size */
+      background: linear-gradient(to right, #040761, #060B83, #070D97, #080fb1);
+      color: white;
+      border: none;
+      border-radius: 0.5vw;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .activity-btn:hover {
+      background: linear-gradient(to right, #060B83, #070D97, #081AB0, #081AB0);
+    }
+
+    .arrow {
+      font-size: 1.6vw; /* Arrow size */
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1200px) {
+      .h1-activities {
+        font-size: 4vw; /* Adjusted font size for tablets and smaller screens */
+      }
+
+      .activities-list {
+        font-size: 1.1rem; /* Adjusted font size for tablets and smaller screens */
+        padding: 15px; /* Adjusted padding for tablets and smaller screens */
+      }
+
+      .activity-btn {
+        font-size: 1.2vw; /* Adjusted font size for tablets and smaller screens */
+        padding: 1.5vh 2.5vw; /* Adjusted padding for tablets and smaller screens */
+      }
+
+      .arrow {
+        font-size: 1.4vw; /* Adjusted arrow size for tablets and smaller screens */
+      }
+    }
+
+    @media (max-width: 992px) {
+      .content-wrapper {
+        grid-template-columns: 1fr; /* Stacks sections vertically on smaller tablets */
+      }
+
+      .description-activities,
+      .activities {
+        width: 100%; /* Full width on smaller tablets */
+        text-align: center; /* Center content on smaller tablets */
+      }
+
+      .h1-activities {
+        font-size: 4.5vw; /* Further adjusted size for smaller tablets */
+      }
+
+      .activities-list {
+        font-size: 1.2rem; /* Further adjusted font size for smaller tablets */
+        padding: 15px; /* Further adjusted padding for smaller tablets */
+      }
+
+      .activity-btn {
+        font-size: 1.5vw; /* Further adjusted font size for smaller tablets */
+        padding: 1.5vh 2.5vw; /* Further adjusted padding for smaller tablets */
+      }
+
+      .arrow {
+        font-size: 1.5vw; /* Further adjusted arrow size for smaller tablets */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        grid-template-columns: 1fr; /* Stacks sections vertically on mobile */
+      }
+
+      .description-activities,
+      .activities {
+        width: 100%; /* Full width on mobile */
+        text-align: center; /* Center content on mobile */
+      }
+
+      .h1-activities {
+        font-size: 5vw; /* Adjusted size for mobile */
+      }
+
+      .activities-list {
+        font-size: 3vw; /* Adjusted font size for mobile */
+        padding: 5px; /* Adjusted padding for mobile */
+      }
+
+      .activity-btn {
+        font-size: 3.5vw; /* Adjusted font size for mobile */
+        padding: 2vh 4vw; /* Adjusted padding for mobile */
+      }
+
+      .arrow {
+        font-size: 3.5vw; /* Adjusted arrow size for mobile */
+      }
+    }
+
+    @media (max-width: 576px) {
+      .description-section {
+        padding: 5px; /* Reduced padding for extra small devices */
+      }
+
+      .h1-activities {
+        font-size: 6vw; /* Further adjusted size for extra small devices */
+      }
+
+      .activities-list {
+        font-size: 3.5vw; /* Further adjusted font size for extra small devices */
+        padding: 5px; /* Further adjusted padding for extra small devices */
+      }
+
+      .activity-btn {
+        font-size: 4vw; /* Further adjusted font size for extra small devices */
+        padding: 2.5vh 5vw; /* Further adjusted padding for extra small devices */
+      }
+
+      .arrow {
+        font-size: 4vw; /* Further adjusted arrow size for extra small devices */
+      }
+    }
+
+    /* Animations */
+    @keyframes slide-in-left {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slide-in-right {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-left.in-view {
+      animation: slide-in-left 1s forwards;
+    }
+
+    .animate-right.in-view {
+      animation: slide-in-right 1s forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="description-section">
+    <div class="description-container">
+      <div class="content-wrapper">
+        <div class="description-activities">
+          <h1 class="h1-activities animate-left">Our Activities</h1>
+          <pre class="activities-list animate-left">
+Grootz community is actively participating inc 
+different activities such as -
+
+  We organise events, competitions, and fests.    
+  We organise workshops (Technical/Non-Technical) in 
+different fields such as Finance, Medical, Coding, 
+Development, Soft skills, TC, etc.
+  Our community provides consultancy services to 
+students in getting them admission in some of the best 
+colleges.
+  Our community provides free education to financially 
+weak students.
+
+Grootz community aims to empower students by 
+offering valuable insights, guidance, and resources to 
+help them make informed decisions about their future.
+          </pre>
+        </div>
+        <div class="activities">
+          <button class="activity-btn animate-right">Workshops <span class="arrow">›</span></button>
+          <button class="activity-btn animate-right">Counselling <span class="arrow">›</span></button>
+          <button class="activity-btn animate-right">Education <span class="arrow">›</span></button>
+          <button class="activity-btn animate-right">Events <span class="arrow">›</span></button>
+        </div>
+      </div>
     </div>
-  </section>
-  
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elementsToAnimate = document.querySelectorAll(".animate-left, .animate-right");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elementsToAnimate.forEach(element => observer.observe(element));
+    });
+  </script>
+</body>
+</html>
