@@ -111,21 +111,6 @@ nav ul li a:hover {
   transform: scale(1.15);
 }
 
-/* Styles for the burger menu */
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu div {
-  width: 25px;
-  height: 3px;
-  background-color: #000;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-
 @media screen and (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -133,11 +118,6 @@ nav ul li a:hover {
 
   header {
     padding: 1rem;
-  }
-
-  .burger-menu {
-    display: block;
-    z-index: 2;
   }
 
   nav {
@@ -171,20 +151,6 @@ nav ul li a:hover {
   .right-menu {
     display: none;
   }
-}
-
-.burger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.burger-menu div {
-  width: 25px;
-  height: 3px;
-  background-color: #000;
-  margin: 5px 0;
-  transition: all 0.3s ease;
 }
 
 .right-menu a {
@@ -337,12 +303,12 @@ main {
 }
 
 .hero-content .cta-button {
-  animation: slideInRight 0.85s ease-out forwards;
+  animation: slideInRight 1s ease-out forwards;
 }
 
 .hero-content h1,
 .hero-content .p {
-  animation: slideInRight 0.6s ease-out forwards;
+  animation: slideInRight 1s ease-out forwards;
 }
 
 .icon-animation {
@@ -506,12 +472,6 @@ main {
   header {
     padding: 1rem;
   }
-
-  .burger-menu {
-    display: block;
-    z-index: 2;
-  }
-
   nav {
     position: fixed;
     right: -100%;
@@ -729,15 +689,6 @@ main {
         };
         window.requestAnimationFrame(step);
       }
-      document.addEventListener('DOMContentLoaded', function() {
-        const burgerMenu = document.querySelector('.burger-menu');
-        const nav = document.querySelector('nav');
-
-        burgerMenu.addEventListener('click', function() {
-          nav.classList.toggle('active');
-          burgerMenu.classList.toggle('active');
-        });
-      });
     </script>
   </body>
 </html>
