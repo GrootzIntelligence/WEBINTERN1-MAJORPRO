@@ -1,11 +1,4 @@
-# 🌟 Project Name
-
-## 📑 Table of Contents
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Setup and Installation](#setup-and-installation)
-5. [Team Members](#team-members)
+# 🌟 Grootz
 
 ## 📋 Project Overview
 This project is a dynamic, responsive web application designed to provide an engaging user experience through interactive animations and a sleek design. The website includes multiple sections such as the hero area, statistics, icons section, about us, activities, blog, FAQ, and contact information. The project uses EJS for templating, allowing for modular and reusable code, and leverages a modern tech stack to ensure scalability and performance.
