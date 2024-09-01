@@ -48,4 +48,6 @@ This project is a dynamic, responsive web application designed to provide an eng
     ```
 
 ## 👥 Team Members
-
+- **Pulkit Gupta**: Lead developer, responsible for the main website's design, structure, and component integration.
+- **Kashish Gupta**: Developed the FAQ and Activities sections.
+- **Sachin**: Designed the 'About Us' website, aligning it with the website's overall theme and style.
