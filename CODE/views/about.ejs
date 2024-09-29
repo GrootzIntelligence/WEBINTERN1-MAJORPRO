@@ -1,10 +1,191 @@
-<section id="about" class="about-section">
-  <div class="about-content">
-    <p class="para-1">
-      Grootz is a dynamic organization dedicated to empowering the next generation through a variety of comprehensive services. We offer extensive student assistance, including personalized tutoring and mentoring programs designed to enhance academic performance and personal development. Our consultancy services provide expert guidance, ensuring that students and young professionals make informed decisions about their educational and career paths.
-    </p>
-    <p class="para-2">
-      In addition to our educational support, Grootz is committed to up-skilling youth by hosting events and seminars that provide valuable learning experiences. We are proud to offer free education to financially disadvantaged students, ensuring that financial constraints do not hinder access to quality education. Furthermore, our IT and management services are tailored to meet the diverse needs of individuals and organizations, helping them achieve excellence in their respective fields.
+<%- include('./partials/head.ejs') %>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-top: 1rem;
+    gap: 5rem;
+  }
+
+  nav ul li a {
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.4s ease, transform 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .right-menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7rem;
+    margin-right: 3rem;
+  }
+
+  .right-menu a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 17px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+  }
+
+  .academy {
+    color: #ff6b00;
+    background-color: #fff;
+  }
+
+  .intelligence {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .community {
+    background-color: #000;
+    color: #4494ff;
+  }
+
+  .academy:hover,
+  .intelligence:hover,
+  .community:hover {
+    transform: scale(1.15);
+  }
+  body {
+    font-size: 1.2rem;
+    background: url("/images/back.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff; /* Default text color for the content */
+    font-family: "Poppins";
+  }
+
+  /* Section container */
+  .about-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 16px; /* Increase the border-radius for rounder corners */
+    text-align: center;
+    max-width: 800px;
+    background-color: #f7f7f7; /* Light grey background for sections */
+    color: grey; /* Grey color for the text inside sections */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Section Headings */
+  .section-heading {
+    font-size: 2.5rem; /* Make the heading text larger */
+    color: #ffffff; /* White color for the headings */
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 9rem; /* Adding space above the heading */
+    font-weight: bold; /* Make the headings bold */
+  }
+
+  /* Section Content */
+  .section-content {
+    font-size: 1.5rem;
+    color: grey; /* Grey color for the content */
+  }
+
+  /* Button styles */
+  .btn-primary {
+    background-color: #3d67ff;
+    color: #ffffff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .btn-primary:hover {
+    background-color: #f7f7f7;
+    color: #3d67ff;
+  }
+</style>
+
+<main>
+  <%- include('./partials/nav.ejs') %>
+  <h1 class="section-heading">About Grootz</h1>
+  <div class="about-section">
+    <p class="hero-description section-content">
+      Grootz is a dynamic organization dedicated to empowering the next
+      generation through a variety of comprehensive services. We offer extensive
+      student assistance, including personalized tutoring and mentoring programs
+      designed to enhance academic performance and personal development. Our
+      consultancy services provide expert guidance, ensuring that students and
+      young professionals make informed decisions about their educational and
+      career paths. In addition to our educational support, Grootz is committed
+      to up-skilling youth by hosting events and seminars that provide valuable
+      learning experiences. We are proud to offer free education to financially
+      disadvantaged students, ensuring that financial constraints do not hinder
+      access to quality education.
     </p>
   </div>
-</section>
+
+  <h3 class="section-heading">Our Mission</h3>
+  <div class="about-section">
+    <p class="section-content">
+      We tend to provide the best and most useful career counselling for willing
+      students and help them take the right path for their future endeavors.
+    </p>
+  </div>
+
+  <h3 class="section-heading">Community Support</h3>
+  <div class="about-section">
+    <p class="section-content">
+      At Grootz, we support a community of over 500 students across India,
+      committed to fulfilling their educational aspirations. As academic
+      pressure has intensified, finding a clear path to success has become
+      challenging for many students. Our dedicated tutors step in to provide
+      essential guidance, offering a roadmap for a smoother educational journey.
+      We assist students with their academic curriculum by fostering logical
+      understanding, critical thinking, and encouraging them to reach their full
+      potential. Our services focus on delivering high-quality study materials,
+      comprehensive notes, engaging classes, and overall guidance to ensure
+      effective tutorship and student satisfaction.
+    </p>
+  </div>
+</main>

@@ -6,150 +6,285 @@
         Grootz is a one stop solution for all the aspiring minds. Let your mind wander into the depths of innovation and practice thinking out of the box with the help of exemplary services of our competent team.
       </p>
     </div>
-    <div class="blog-cards">
-      <div class="blog-card">
-        <img src="https://placehold.co/400x250" alt="Celebrating with children">
-        <h3>Celebrating with children</h3>
-        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
-        <a href="#" class="read-more">Read More</a>
+    <div class="blog-slider-container">
+      <button class="slider-btn prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="blog-slider">
+        <div class="blog-cards">
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Student success stories">
+            <h3>Student success stories</h3>
+            <p>Read inspiring stories of students who have achieved their goals and transformed their lives with the help of Grootz's guidance and support.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Future of learning">
+            <h3>Future of learning</h3>
+            <p>Explore the latest trends in education and how Grootz is preparing students for the challenges and opportunities of tomorrow.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Community impact">
+            <h3>Community impact</h3>
+            <p>Learn about Grootz's initiatives to make a positive impact in communities through education and empowerment programs.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Tech in education">
+            <h3>Tech in education</h3>
+            <p>Discover how Grootz integrates cutting-edge technology into its educational programs to enhance learning experiences and outcomes.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Career guidance">
+            <h3>Career guidance</h3>
+            <p>Get expert advice on career planning, industry trends, and skills development to help you make informed decisions about your future.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+          <div class="blog-card">
+            <img src="https://placehold.co/400x250" alt="Learning tips">
+            <h3>Learning tips & tricks</h3>
+            <p>Boost your productivity and effectiveness with our curated collection of study techniques, time management strategies, and learning hacks.</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>      
+        </div>
       </div>
-      <div class="blog-card">
-        <img src="https://placehold.co/400x250" alt="Celebrating with children">
-        <h3>Celebrating with children</h3>
-        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
-        <a href="#" class="read-more">Read More</a>
-      </div>
-      <div class="blog-card">
-        <img src="https://placehold.co/400x250" alt="Celebrating with children">
-        <h3>Celebrating with children</h3>
-        <p>Grootz is a student-focused organization dedicated to empowering students by providing valuable insights, guidance, and resources to help them make informed decisions about their future.</p>
-        <a href="#" class="read-more">Read More</a>
-      </div>
+      <button class="slider-btn next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
 <style>
   .blog-section {
-  background-color: white;
-  color: #000;
-  width: 100%;
-  min-height: 90vh;
-  padding: 60px 20px;
-  box-sizing: border-box;
-}
+    background-color: white;
+    color: #000;
+    width: 100%;
+    min-height: 90vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+  }
 
-.blog-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .blog-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
 
-.head {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.head h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.blue-text {
-  color: #3498db;
-}
-
-.description {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.blog-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
-}
-
-.blog-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease; /* Smooth transition for transform */
-}
-
-.blog-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  object-fit: cover;
-  height: 200px;
-}
-
-.blog-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.blog-card p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  flex-grow: 1;
-}
-
-.read-more {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  align-self: flex-start;
-}
-
-.blog-card:hover {
-  transform: scale(1.05); /* Slightly enlarge the card on hover */
-}
-
-@media (max-width: 768px) {
-  .blog-section {
-    padding: 40px 15px;
+  .head {
+    text-align: center;
+    margin-bottom: 40px;
   }
 
   .head h1 {
-    font-size: 2rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .blue-text {
+    color: #3498db;
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .blog-slider-container {
+    position: relative;
+    padding: 0 50px;
+  }
+
+  .blog-slider {
+    overflow: hidden;
   }
 
   .blog-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .head h1 {
-    font-size: 1.8rem;
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-bottom: 2rem;
   }
 
-  .description {
-    font-size: 0.8rem;
+  .blog-card {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    height: 200px;
   }
 
   .blog-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .blog-card p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
   }
-}
-  
+
+  .read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    align-self: flex-start;
+  }
+
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #3498db;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+
+  .slider-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .slider-btn.prev {
+    left: 0;
+  }
+
+  .slider-btn.next {
+    right: 0;
+  }
+
+  @media (max-width: 992px) {
+    .blog-card {
+      flex: 0 0 calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-section {
+      padding: 40px 15px;
+    }
+
+    .head h1 {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+
+    .blog-card {
+      flex: 0 0 calc(100% - 20px);
+    }
+
+    .blog-slider-container {
+      padding: 0 30px;
+    }
+
+    .slider-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .head h1 {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+
+    .blog-card h3 {
+      font-size: 1rem;
+    }
+
+    .blog-card p {
+      font-size: 0.8rem;
+    }
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.blog-cards');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    const cards = document.querySelectorAll('.blog-card');
+    let currentIndex = 0;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function updateButtons() {
+      prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
+      nextBtn.style.display = currentIndex >= cards.length / 3 - 1 ? 'none' : 'flex';
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+        updateButtons();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < cards.length / 3 - 1) {
+        currentIndex++;
+        updateSlider();
+        updateButtons();
+      }
+    });
+
+    // Initial button state
+    updateButtons();
+
+    // Update layout on window resize
+    window.addEventListener('resize', () => {
+      currentIndex = 0;
+      updateSlider();
+      updateButtons();
+    });
+  });
+</script>
