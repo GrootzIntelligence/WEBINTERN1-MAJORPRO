@@ -24,6 +24,10 @@ app.get('/single-blog', async(req, res) =>{
   res.render('single-blog');
 })
 
+app.get('/gallery', async(req, res) =>{
+  res.render('gallery');
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
