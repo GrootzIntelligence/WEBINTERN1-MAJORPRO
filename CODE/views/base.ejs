@@ -244,13 +244,21 @@ nav ul li a:hover {
   width: 100vw;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: 4rem 2rem;
+}
+
+.about-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .about-content {
   max-width: 1400px;
-  margin: 7rem auto;
-  padding: 0 2rem;
+  margin: 0 auto;
 }
 
 main {
@@ -295,7 +303,7 @@ main {
 }
 
 .para-1 {
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
 }
 
 .hero-content > * {
@@ -426,12 +434,16 @@ main {
   .cta-button {
     font-size: 28px;
   }
+
+  .about-heading {
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 992px) {
   .about-section {
     min-height: auto;
-    padding: 4rem 0;
+    padding: 3rem 2rem;
   }
   
   .about-content p {
@@ -439,7 +451,7 @@ main {
   }
   
   .para-1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .hero h1 {
@@ -461,6 +473,10 @@ main {
   
   nav ul {
     gap: 3rem;
+  }
+
+  .about-heading {
+    font-size: 2rem;
   }
 }
 
@@ -504,8 +520,8 @@ main {
     display: none;
   }
   
-  .about-content {
-    padding: 0 1rem;
+  .about-section {
+    padding: 2rem 1rem;
   }
   
   .about-content p {
@@ -529,11 +545,15 @@ main {
     flex-direction: column;
     gap: 2rem;
   }
+
+  .about-heading {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .about-section {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
   
   .about-content p {
@@ -560,6 +580,10 @@ main {
   .logo img {
     width: 50px;
     height: 43px;
+  }
+
+  .about-heading {
+    font-size: 1.5rem;
   }
 }
     </style>
@@ -601,12 +625,13 @@ main {
         />
       </div>
       <section id="about" class="about-section">
+        <h1 class="about-heading">ABOUT US</h1>
         <div class="about-content">
           <p class="para-1">
             Grootz is a dynamic organization dedicated to empowering the next generation through a variety of comprehensive services. We offer extensive student assistance, including personalized tutoring and mentoring programs designed to enhance academic performance and personal development. Our consultancy services provide expert guidance, ensuring that students and young professionals make informed decisions about their educational and career paths.
           </p>
           <p class="para-2">
-            In addition to our educational support, Grootz is committed to up-skilling youth by hosting events and seminars that provide valuable learning experiences. We are proud to offer free education to financially disadvantaged students, ensuring that financial constraints do not hinder access to quality education. Furthermore, our IT and management services are tailored to meet the diverse needs of individuals and organizations, helping them achieve excellence in their respective fields.
+            In addition to our educational support, Grootz is committed to up-skilling youth by hosting events and seminars that provide valuable learning experiences. We are proud to offer free education to financially disadvantaged students, ensuring that financial constraints do not hinder access to quality education. Furthermore, our IT and management services are tailored to meet the diverse needs of individuals and organizations, helping them achieve excellence in their respective fields.
           </p>
         </div>
       </section>      
@@ -639,10 +664,10 @@ main {
         const aboutSection = document.getElementById("about");
         const para1 = document.querySelector(".para-1");
         const para2 = document.querySelector(".para-2");
-
+  
         const aboutPosition = aboutSection.getBoundingClientRect().top;
         const screenHeight = window.innerHeight;
-
+  
         if (aboutPosition < screenHeight - 150) {
           para1.classList.add("slide-in-left");
           para2.classList.add("slide-in-right");
@@ -652,22 +677,22 @@ main {
         // New code for icon animations
         const iconsSection = document.getElementById("icons-section");
         const iconElements = iconsSection.querySelectorAll(".icon-animation");
-
+  
         const iconsSectionPosition = iconsSection.getBoundingClientRect().top;
-
+  
         if (iconsSectionPosition < screenHeight - 150) {
           iconElements[0].classList.add("slide-left");
           iconElements[1].classList.add("slide-top");
           iconElements[2].classList.add("slide-right");
         }
       });
-
+  
       const stats = document.querySelectorAll(".stat-number");
-
+  
       const observerOptions = {
         threshold: 0.5,
       };
-
+  
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -681,11 +706,11 @@ main {
           }
         });
       }, observerOptions);
-
+  
       stats.forEach((stat) => {
         observer.observe(stat);
       });
-
+  
       function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
@@ -700,4 +725,4 @@ main {
       }
     </script>
   </body>
-</html>
+  </html>

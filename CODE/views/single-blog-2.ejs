@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>       
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Main container */
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Blog article styling */
+        article {
+            margin-top: 7rem;
+            margin-bottom: 3rem;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .share-section p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #007FB5;
+        }
+
+        /* Blog header */
+        .blog-header h1 {
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .blog-header p {
+            margin-top: 25px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Blog image */
+        .blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Blog content section */
+        .blog-content {
+            padding: 20px;
+            color: #333;
+        }
+
+        .blog-content h2, .blog-content h3, .blog-content h4 {
+            color: #007FB5;
+            margin-top: 20px;
+        }
+
+        .blog-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Lists inside the blog */
+        .blog-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .blog-content ul li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            main {
+                width: 95%;
+            }
+
+            article {
+                margin-top: 3rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .blog-content h4 {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .blog-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .blog-content {
+                padding: 10px;
+            }
+
+            .blog-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .blog-content h4 {
+                font-size: 1rem;
+            }
+
+            .blog-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Blog Content -->
+    <%- include('./partials/nav.ejs') %>
+    <main>
+        <article>
+            <!-- Blog Image -->
+            <img src="images/blog/b2.png" alt="Grootz Webinar Program" class="blog-image">
+
+            <!-- Blog Title and Meta Information -->
+            <nav class="blog-header">
+                <h1>Grootz Webinar Program: Your Roadmap to Success</h1>
+                <p>By Grootz Team | October 2024</p>
+            </nav>
+
+            <!-- Blog Content -->
+            <section class="blog-content">
+                <h2>Introducing the Grootz Webinar Program</h2>
+                <p>Hey students!! The roadmap to success is finally out. With Grootz, troubleshoot all your worries because we are here with webinars to help you achieve a brighter future and provide something of value.</p>
+                
+                <h2>Key Features of Our Webinars</h2>
+                <ul>
+                    <li><strong>Career Guidance and Counselling:</strong> The path to success has never been a bed of roses, but we are here to be the light. Our webinar features career guidance roadmaps for students where we explain the step-by-step process to reach your goal.</li>
+                    <li><strong>Current Scenario Analysis:</strong> With the increasing competition, changes in the educational system, and thus increasing confusion among students, it becomes essential to know the developments around. We provide detailed analysis on the current scenario for students to choose wisely.</li>
+                    <li><strong>Student Threats and Challenges:</strong> Students face multiple threats and challenges on a daily basis, but we are with you to solve your issues. We are here to ease the mental pressure that comes with lack of certainty, and our webinars aim to clear all the clouds of indecisiveness from your brain.</li>
+                    <li><strong>Tech/Computer-based Courses:</strong> Knowledge about computers and computer-based technologies is really important to thrive in the current era. We conduct webinars on tech-based courses to help you keep up with the world.</li>
+                    <li><strong>Biological Science Courses:</strong> Often biology students struggle to find proper guidance due to lack of awareness and tough competition in the field of medicine. We educate the students about the various fields available for them to pursue their interest.</li>
+                    <li><strong>Commerce Stream Courses:</strong> Not only science, but we specialize in commercial applications too. Often ignored, the plight and hard work of the commerce students is rewarded by us with excellent advice and varied career options.</li>
+                </ul>
+
+                <h2>Our Success Story</h2>
+                <p>We have already conducted our first webinar on May 31, 2024, successfully. We guided students over two Google Meets, explaining our <strong>"Grootz Student Assistance Program-1st Phase"</strong> for classes 11th and 12th. We were thrilled to witness large-scale participation from various places like Delhi, Jaipur, Kanpur, Uttarakhand, Lucknow, and many more, out of which 150+ students have already registered with us.</p>
+
+                <h2>Why Choose Grootz Webinars?</h2>
+                <p>As students, it is very important to be aware of career prospects, skills needed, and the courses to opt for. Often students choose what others are doing and become one of the crowd, but we are here to provide you with correct information catering to your interests and abilities.</p>
+
+                <h2>Join Us Today!</h2>
+                <p>Don't miss out on this opportunity to shape your future. Join us to avail all these facilities and set yourself on the path to success!</p>
+            </section>
+            <div class="share-section">
+                <p>Share this Article</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <%- include('./contact.ejs') %>
+<%- include('./footer.ejs') %>
+</body>
+</html>

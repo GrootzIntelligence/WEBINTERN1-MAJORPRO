@@ -20,8 +20,19 @@ app.get("/about", async (req, res) => {
 app.get('/main-blog', async(req, res) =>{
   res.render('main-blog');
 })
-app.get('/single-blog', async(req, res) =>{
-  res.render('single-blog');
+app.get('/single-blog-1', async(req, res) =>{
+  res.render('single-blog-1');
+})
+
+app.get('/single-blog-2', async(req, res) =>{
+  res.render('single-blog-2');
+})
+
+app.get('/single-blog-3', async(req, res) =>{
+  res.render('single-blog-3');
+})
+app.get('/single-blog-4', async(req, res) =>{
+  res.render('single-blog-4');
 })
 
 app.get('/gallery', async(req, res) =>{

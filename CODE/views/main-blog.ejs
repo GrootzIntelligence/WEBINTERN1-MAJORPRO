@@ -1,218 +1,217 @@
 <%- include('./partials/head.ejs') %> <%- include('./partials/nav.ejs') %>
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-  body {
-    font-family: "Poppins", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Background image */
-  .blog-section {
-    margin-top: 6.8rem;
-    background: url("/images/blog-img.jpg") no-repeat center center;
-    background-size: cover;
-    height: 50vh; /* Half the screen height */
-    position: relative;
-  }
+/* Background image */
+.blog-section {
+  margin-top: 6.8rem;
+  background: url("/images/blog-img.jpg") no-repeat center center;
+  background-size: cover;
+  height: 50vh; /* Half the screen height */
+  position: relative;
+}
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  .blog-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    z-index: 2; /* On top of the background */
-  }
+.blog-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2; /* On top of the background */
+}
 
-  /* Filter Bar */
-  .blog-nav {
-    background-color: white;
-    border-radius: 9999px;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    position: absolute;
-    bottom: -28rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
+/* Filter Bar */
+.blog-nav {
+  background-color: white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  position: absolute;
+  bottom: -28rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
 }
 
 .blog-nav-links {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .blog-nav a {
-    padding: 0 1rem; /* Adjusted padding for a more compact look */
-    text-decoration: none;
-    color: #1f2937; /* Darker color for text */
-    font-size: 0.875rem; /* Slightly smaller font */
-    border-radius: 9999px;
-    margin: 0 0.5rem;
-    position: relative;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  margin: 0 0.5rem;
+  position: relative;
 }
 
 .blog-nav a:hover,
 .blog-nav a.active {
-    color: #1f2937;
+  color: #1f2937;
 }
 
 .blog-nav a.active::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 2px;
-    background-color: #3b82f6; /* Blue underline */
-    position: absolute;
-    left: 50%;
-    bottom: -0.5rem; /* Adjusted position for the underline */
-    transform: translateX(-50%);
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #3b82f6;
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translateX(-50%);
 }
 
 .blog-nav a:hover::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 2px;
-    background-color: #3b82f6;
-    position: absolute;
-    left: 50%;
-    bottom: -0.5rem;
-    transform: translateX(-50%);
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #3b82f6;
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translateX(-50%);
 }
 
 .blog-nav input[type="search"] {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 9999px;
-    font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  font-size: 0.875rem;
 }
 
+/* Blog Grid */
+.blog-grid {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
 
-  /* Blog Grid */
+@media (max-width: 1024px) {
   .blog-grid {
-    margin-top:5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  @media (max-width: 1024px) {
-    .blog-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width: 640px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
+}
 
-  @media (max-width: 640px) {
-    .blog-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+.blog-post {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
 
-  .blog-post {
-    background-color: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    padding: 0.6rem;
-  }
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3%;
+}
 
-  .blog-post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 3%;
-  }
+.blog-post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-  .blog-post-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
+.blog-post-author {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
 
-  .blog-post-author {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-bottom: 0.5rem;
-  }
+.blog-post h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
 
-  .blog-post h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-  }
+.blog-post p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+}
 
-  .blog-post p {
-    color: #6b7280;
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-    flex-grow: 1;
-  }
+.blog-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
 
-  .blog-post-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-  }
+.blog-post a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
 
-  .blog-post a {
-    color: #3b82f6;
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: bold;
-  }
+.blog-search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  padding: 0.25rem;
+}
 
-  .blog-search-container {
-    display: flex;
-    align-items: center;
-    background-color: #f3f4f6;
-    border-radius: 9999px;
-    padding: 0.25rem;
-  }
+.blog-search-input {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: transparent;
+  font-size: 0.875rem;
+}
 
-  .blog-search-input {
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    border: none;
-    background-color: transparent;
-    font-size: 0.875rem;
-  }
+.blog-search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .blog-search-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .blog-search-button svg {
-    width: 20px;
-    height: 20px;
-    color: #6b7280;
-  }
+.blog-search-button svg {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
   header {
     display: flex;
     justify-content: space-between;
@@ -380,7 +379,6 @@
 <body>
   <section class="blog-section">
     <div class="overlay"></div>
-    <!-- Dark overlay for the image -->
     <div class="blog-container">
       <nav class="blog-nav">
         <div class="blog-nav-links">
@@ -423,145 +421,109 @@
   <!-- Blog grid and posts -->
   <section class="blog-container">
     <div class="blog-grid" id="blog-grid">
-      <!-- Blog posts go here -->
       <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
+        <img src="images/blog/b1.png" alt="AI and Human" />
         <div class="blog-post-content">
           <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
+          <h3>Impact of Educational Podcast in 2024</h3>
           <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
+            A podcast is a digital audio program that you can listen to on various devices, such as smartphones, tablets, or computers
           </p>
           <div class="blog-post-meta">
-            <a href="/single-blog">Read more</a>
+            <a href="/single-blog-1">Read more</a>
           </div>
         </div>
       </div>
-      <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
+      <div class="blog-post" data-category="design">
+        <img src="images/blog/b2.png" alt="UI/UX Design Trends" />
         <div class="blog-post-content">
-          <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
+          <span class="blog-post-author">By Grootz on August 2024</span>
+          <h3>Webinar Blog</h3>
           <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
+            Hey students!! The roadmap to success is finally out. With Grootz, troubleshoot all your worries because we are here with webinars to help you achieve a brighter future and provide something of value.
           </p>
           <div class="blog-post-meta">
-            <a href="#">Read more</a>
+            <a href="/single-blog-2">Read more</a>
           </div>
         </div>
       </div>
-      <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
+      <div class="blog-post" data-category="business">
+        <img src="images/blog/b3.png" alt="Business Strategy" />
         <div class="blog-post-content">
-          <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
+          <span class="blog-post-author">By Grootz on July 2024</span>
+          <h3>Importance of Skills in 2024</h3>
           <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
+            Skill refers to the ability to perform a task or activity proficiently, often developed through practice, experience, and training. 
           </p>
           <div class="blog-post-meta">
-            <a href="#">Read more</a>
+            <a href="/single-blog-3">Read more</a>
           </div>
         </div>
       </div>
-      <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
+      <div class="blog-post" data-category="events">
+        <img src="images/blog/b4.png" alt="Tech Conference" />
         <div class="blog-post-content">
-          <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
+          <span class="blog-post-author">By Grootz on October 2024</span>
+          <h3>Education and Opportunity gap between small cities and metropolitan areas</h3>
           <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
+            Education is vital for everyone, impacting personal development, Financial independence, and for overall progress.
           </p>
           <div class="blog-post-meta">
-            <a href="#">Read more</a>
+            <a href="/single-blog-4">Read more</a>
           </div>
         </div>
       </div>
-      <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
-        <div class="blog-post-content">
-          <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
-          <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
-          </p>
-          <div class="blog-post-meta">
-            <a href="#">Read more</a>
-          </div>
-        </div>
-      </div>
-      <div class="blog-post" data-category="ai">
-        <img src="https://placehold.co/400x250" alt="AI and Human" />
-        <div class="blog-post-content">
-          <span class="blog-post-author">By Grootz on September 2024</span>
-          <h3>The Role of Artificial Intelligence in 2024</h3>
-          <p>
-            Welcome to the fascinating world of artificial intelligence (AI) in
-            2024!...
-          </p>
-          <div class="blog-post-meta">
-            <a href="#">Read more</a>
-          </div>
-        </div>
-      </div>
-      <!-- Add more blog-posts here -->
     </div>
   </section>
+  
   <%- include('./contact.ejs') %>
   <%- include('./footer.ejs') %>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const blogGrid = document.getElementById("blog-grid");
-      const searchInput = document.getElementById("blog-search");
-      const filterLinks = document.querySelectorAll(".blog-nav-links a");
+  const blogGrid = document.getElementById("blog-grid");
+  const searchInput = document.getElementById("blog-search");
+  const filterLinks = document.querySelectorAll(".blog-nav-links a");
 
-      // Filter functionality
-      filterLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const filter = this.getAttribute("data-filter");
+  function filterPosts(filter, searchValue) {
+    const posts = blogGrid.querySelectorAll(".blog-post");
+    posts.forEach((post) => {
+      const title = post.querySelector("h3").innerText.toLowerCase();
+      const description = post.querySelector("p").innerText.toLowerCase();
+      const author = post.querySelector(".blog-post-author").innerText.toLowerCase();
+      const category = post.getAttribute("data-category");
 
-          filterLinks.forEach((l) => l.classList.remove("active"));
-          this.classList.add("active");
+      const matchesFilter = filter === "all" || category === filter;
+      const matchesSearch = 
+        title.includes(searchValue) || 
+        description.includes(searchValue) || 
+        author.includes(searchValue);
 
-          const posts = blogGrid.querySelectorAll(".blog-post");
-          posts.forEach((post) => {
-            if (
-              filter === "all" ||
-              post.getAttribute("data-category") === filter
-            ) {
-              post.style.display = "block";
-            } else {
-              post.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Search functionality
-      searchInput.addEventListener("input", function () {
-        const searchValue = searchInput.value.toLowerCase();
-        const posts = blogGrid.querySelectorAll(".blog-post");
-
-        posts.forEach((post) => {
-          const title = post.querySelector("h3").innerText.toLowerCase();
-          const description = post.querySelector("p").innerText.toLowerCase();
-
-          if (
-            title.includes(searchValue) ||
-            description.includes(searchValue)
-          ) {
-            post.style.display = "block";
-          } else {
-            post.style.display = "none";
-          }
-        });
-      });
+      if (matchesFilter && matchesSearch) {
+        post.style.display = "block";
+      } else {
+        post.style.display = "none";
+      }
     });
+  }
+
+  filterLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const filter = this.getAttribute("data-filter");
+
+      filterLinks.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
+
+      filterPosts(filter, searchInput.value.toLowerCase());
+    });
+  });
+
+  searchInput.addEventListener("input", function () {
+    const searchValue = this.value.toLowerCase();
+    const activeFilter = document.querySelector(".blog-nav-links a.active").getAttribute("data-filter");
+    filterPosts(activeFilter, searchValue);
+  });
+});
   </script>
 </body>

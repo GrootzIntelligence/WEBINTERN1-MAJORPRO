@@ -16,56 +16,56 @@
     }
 
     .description-container {
-      width: 100vw;
+      width: 100%;
       max-width: 1500px;
     }
 
     .h1-activities {
-      font-size: 3.5vw;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
       margin-bottom: 6vh;
       font-weight: 600;
-      text-align: center; /* Center heading */
+      text-align: center;
     }
 
     .content-wrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      grid-template-columns: 1fr 1fr;
       gap: 2vw;
-      align-items: start; /* Align items to the top */
-      height: auto; /* Adjust height automatically */
+      align-items: start;
+      height: auto;
     }
 
     .description-activities {
-      width: 100%; /* Full width within its grid cell */
-      text-align: left; /* Aligns text to the left */
+      width: 100%;
+      text-align: left;
     }
 
     .activities-list {
       font-family: "Poppins", sans-serif;
-      font-size: 1.25rem; /* Reduced font size */
-      white-space: pre-wrap; /* Maintains line breaks and white space */
-      overflow-wrap: break-word; /* Wraps text to fit the container */
-      margin-bottom: 1.5vh; /* Spacing between sections */
-      padding: 10px; /* Reduced padding */
-      border-radius: 0.5vw; /* Rounded corners */
-      max-width: 100%; /* Ensure it fits within its container */
-      box-sizing: border-box; /* Include padding in the width calculation */
+      font-size: clamp(1rem, 1.25vw, 1.25rem);
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      margin-bottom: 1.5vh;
+      padding: 10px;
+      border-radius: 0.5vw;
+      max-width: 100%;
+      box-sizing: border-box;
       color: #D2D2D2;
     }
 
     .activities {
-      width: 100%; /* Full width within its grid cell */
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 6vh; /* Space between buttons */
-      align-self: center; /* Vertically centers buttons */
+      gap: 6vh;
+      align-self: center;
       margin-top: 4.4rem;
     }
 
     .activity-btn {
-      width: 90%; /* Width of each button */
-      padding: 1.8vh 3vw; /* Padding for buttons */
-      font-size: 1.4vw; /* Font size */
+      width: 90%;
+      padding: 1.8vh 3vw;
+      font-size: clamp(1rem, 1.4vw, 1.4rem);
       background: linear-gradient(to right, #040761, #060B83, #070D97, #080fb1);
       color: white;
       border: none;
@@ -83,115 +83,62 @@
     }
 
     .arrow {
-      font-size: 1.6vw; /* Arrow size */
-    }
-
-    /* Media Queries for responsiveness */
-    @media (max-width: 1200px) {
-      .h1-activities {
-        font-size: 4vw; /* Adjusted font size for tablets and smaller screens */
-      }
-
-      .activities-list {
-        font-size: 1.1rem; /* Adjusted font size for tablets and smaller screens */
-        padding: 15px; /* Adjusted padding for tablets and smaller screens */
-      }
-
-      .activity-btn {
-        font-size: 1.2vw; /* Adjusted font size for tablets and smaller screens */
-        padding: 1.5vh 2.5vw; /* Adjusted padding for tablets and smaller screens */
-      }
-
-      .arrow {
-        font-size: 1.4vw; /* Adjusted arrow size for tablets and smaller screens */
-      }
+      font-size: clamp(1rem, 1.6vw, 1.6rem);
     }
 
     @media (max-width: 992px) {
       .content-wrapper {
-        grid-template-columns: 1fr; /* Stacks sections vertically on smaller tablets */
+        grid-template-columns: 1fr;
       }
 
       .description-activities,
       .activities {
-        width: 100%; /* Full width on smaller tablets */
-        text-align: center; /* Center content on smaller tablets */
-      }
-
-      .h1-activities {
-        font-size: 4.5vw; /* Further adjusted size for smaller tablets */
-      }
-
-      .activities-list {
-        font-size: 1.2rem; /* Further adjusted font size for smaller tablets */
-        padding: 15px; /* Further adjusted padding for smaller tablets */
+        width: 100%;
+        text-align: center;
       }
 
       .activity-btn {
-        font-size: 1.5vw; /* Further adjusted font size for smaller tablets */
-        padding: 1.5vh 2.5vw; /* Further adjusted padding for smaller tablets */
+        width: 100%;
+        justify-content: center;
       }
 
       .arrow {
-        font-size: 1.5vw; /* Further adjusted arrow size for smaller tablets */
+        margin-left: 10px;
       }
     }
 
     @media (max-width: 768px) {
-      .content-wrapper {
-        grid-template-columns: 1fr; /* Stacks sections vertically on mobile */
-      }
-
-      .description-activities,
-      .activities {
-        width: 100%; /* Full width on mobile */
-        text-align: center; /* Center content on mobile */
-      }
-
-      .h1-activities {
-        font-size: 5vw; /* Adjusted size for mobile */
-      }
-
       .activities-list {
-        font-size: 3vw; /* Adjusted font size for mobile */
-        padding: 5px; /* Adjusted padding for mobile */
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+        padding: 5px;
       }
 
       .activity-btn {
-        font-size: 3.5vw; /* Adjusted font size for mobile */
-        padding: 2vh 4vw; /* Adjusted padding for mobile */
-      }
-
-      .arrow {
-        font-size: 3.5vw; /* Adjusted arrow size for mobile */
+        font-size: clamp(1rem, 3.5vw, 1.4rem);
+        padding: 2vh 4vw;
       }
     }
 
     @media (max-width: 576px) {
       .description-section {
-        padding: 5px; /* Reduced padding for extra small devices */
+        padding: 5px;
       }
 
       .h1-activities {
-        font-size: 6vw; /* Further adjusted size for extra small devices */
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
       }
 
       .activities-list {
-        font-size: 3.5vw; /* Further adjusted font size for extra small devices */
-        padding: 5px; /* Further adjusted padding for extra small devices */
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
       }
 
       .activity-btn {
-        font-size: 4vw; /* Further adjusted font size for extra small devices */
-        padding: 2.5vh 5vw; /* Further adjusted padding for extra small devices */
-      }
-
-      .arrow {
-        font-size: 4vw; /* Further adjusted arrow size for extra small devices */
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+        padding: 2.5vh 5vw;
       }
     }
 
-    /* Animations */
+    /* Animations remain unchanged */
     @keyframes slide-in-left {
       from {
         transform: translateX(-100%);

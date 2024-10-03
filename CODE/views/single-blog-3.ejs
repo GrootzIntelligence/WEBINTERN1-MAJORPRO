@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>       
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Main container */
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Blog article styling */
+        article {
+            margin-top: 7rem;
+            margin-bottom: 3rem;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .share-section p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: #007FB5;
+        }
+
+        /* Blog header */
+        .blog-header h1 {
+            margin-top: 1rem;
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .blog-header p {
+            margin-top: 25px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Blog image */
+        .blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Blog content section */
+        .blog-content {
+            padding: 20px;
+            color: #333;
+        }
+
+        .blog-content h2, .blog-content h3, .blog-content h4 {
+            color: #007FB5;
+            margin-top: 20px;
+        }
+
+        .blog-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            margin: 15px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Lists inside the blog */
+        .blog-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .blog-content ul li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            main {
+                width: 95%;
+            }
+
+            article {
+                margin-top: 3rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .blog-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .blog-content h4 {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .blog-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .blog-content {
+                padding: 10px;
+            }
+
+            .blog-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .blog-content h4 {
+                font-size: 1rem;
+            }
+
+            .blog-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Blog Content -->
+    <%- include('./partials/nav.ejs') %>
+    <main>
+        <article>
+            <!-- Blog Image -->
+            <img src="images/blog/b3.png" alt="The Importance of Skills in 2024" class="blog-image">
+
+            <!-- Blog Title and Meta Information -->
+            <nav class="blog-header">
+                <h1>The Importance of Skills in 2024: Navigating a Rapidly Changing World</h1>
+                <p>By Grootz Team | October 2024</p>
+            </nav>
+
+            <!-- Blog Content -->
+            <section class="blog-content">
+                <h2>Understanding Skills in 2024</h2>
+                <p>Skill refers to the ability to perform a task or activity proficiently, often developed through practice, experience, and training. In 2024, skills represent a lifelong learning process, fostering a growth mindset and the ability to adapt easily to changes. They are essential for personal development, career advancement, and effective functioning in everyday life.</p>
+                
+                <h2>Why Skills Matter in 2024</h2>
+                <p>Skills are crucial in both personal and professional contexts for a variety of reasons:</p>
+                <ul>
+                    <li><strong>Employability:</strong> In a competitive job market, having the right skills makes candidates more attractive to employers. Skills can lead to promotions and new job roles, enhancing career opportunities.</li>
+                    <li><strong>Adaptability:</strong> With a rapidly changing environment, skills enable individuals to adapt to new technologies, processes, and market demands.</li>
+                    <li><strong>Problem-Solving:</strong> Skills such as critical thinking and creativity help individuals address challenges effectively and provide innovative solutions.</li>
+                    <li><strong>Leadership:</strong> Interpersonal skills, including strong communication and collaboration, are essential for effective leadership and teamwork.</li>
+                    <li><strong>Productivity:</strong> Well-developed skills lead to more efficient work processes, saving time and resources. Skilled individuals tend to produce higher-quality work, benefiting organizations.</li>
+                    <li><strong>Personal Growth:</strong> Mastering new skills boosts self-esteem and confidence in one's abilities, leading to personal satisfaction and a sense of achievement.</li>
+                </ul>
+
+                <h2>Essential Skills for 2024</h2>
+                <p>As the landscape of work continues to evolve, several skills are becoming increasingly important across various sectors:</p>
+                <ul>
+                    <li><strong>Digital Literacy:</strong> Proficiency in using digital tools and platforms, including understanding cybersecurity and data privacy.</li>
+                    <li><strong>Data Analysis:</strong> The ability to collect and analyze data to make informed decisions.</li>
+                    <li><strong>Artificial Intelligence & Machine Learning:</strong> Understanding AI concepts and their applications.</li>
+                    <li><strong>Adaptability:</strong> Openness to change and ability to learn new skills quickly, being resilient in facing evolving job roles and industries.</li>
+                    <li><strong>Emotional Intelligence (EQ):</strong> Empathy, communication, and interpersonal skills to manage one's own emotions and understand others' feelings.</li>
+                    <li><strong>Teamwork:</strong> Working effectively in diverse teams, often in hybrid or remote settings, with strong communication skills to facilitate collaboration.</li>
+                    <li><strong>Sustainability Awareness:</strong> Understanding sustainable practices and corporate social responsibility, with skills to implement environmentally friendly solutions.</li>
+                    <li><strong>Cultural Competence:</strong> Awareness and appreciation of diverse cultures in a globalized world, with skills to work effectively in multicultural environments.</li>
+                </ul>
+
+                <h2>The Future of Skills</h2>
+                <p>As our world becomes increasingly interconnected and rapidly changing in technology, these skills are essential for personal and professional success. Skills empower individuals to navigate difficulties, foster informed decision-making, effective communication, and critical thinking. Moreover, as misinformation and digital threats continue to rise, being skilled helps individuals differentiate between right and wrong information and protect their online presence.</p>
+
+                <h2>Conclusion</h2>
+                <p>In conclusion, the importance of skills in 2024 cannot be overstated. In a rapidly evolving digital age, cultivating strong skill sets is not just an advantage but a necessity for excelling in all aspects of life. Investing in skill development is essential for personal growth, career success, and overall progress in our ever-changing world.</p>
+            </section>
+            <div class="share-section">
+                <p>Share this Article</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+    <%- include('./contact.ejs') %>
+<%- include('./footer.ejs') %>
+</body>
+</html>
