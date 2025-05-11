@@ -51,3 +51,8 @@ This project is a dynamic, responsive web application designed to provide an eng
 - **Pulkit Gupta**: Lead developer, responsible for the main website's design, structure, and component integration.
 - **Kashish Gupta**: Developed the FAQ and Activities sections.
 - **Sachin**: Designed the 'About Us' website, aligning it with the website's overall theme and style.
+
+## Project Approved !
+- Date: 18 December 2024
+- By: Shivam Rajput (founder)
+- Tested By: Core Team (Grootz)
